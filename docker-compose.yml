@@ -1,0 +1,21 @@
+services:
+  alfred:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./config:/app/config:ro
+      - ./data:/app/data          # SQLite memory + Google tokens; back this up
+    expose: ["8000"]
+
+  caddy:                          # HTTPS for the WhatsApp webhook (automatic Let's Encrypt)
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on: [alfred]
+
+volumes:
+  caddy_data:

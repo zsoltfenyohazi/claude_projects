@@ -1,0 +1,60 @@
+# Copy to config/family.yaml and fill in. This file holds no passwords; secrets go in .env.
+family:
+  timezone: Europe/Amsterdam
+  members:
+    - id: dad                       # short id used in commands, e.g. python -m alfred chat dad
+      name: "Your first name"
+      address_as: sir
+      whatsapp: "316XXXXXXXX"       # international format without '+'
+      email: "you@gmail.com"        # where Alfred may write to you (from his own mailbox)
+      preferred_channel: whatsapp
+      work_location: work_eindhoven
+      gmail: true
+      google_calendar: true
+      family_calendar_writer: true  # this person's Google token is used to add to the Family calendar
+      share_mail_with_family: false
+    - id: mum
+      name: "Your wife's first name"
+      address_as: madam
+      whatsapp: "316YYYYYYYY"
+      email: "her@icloud.com"
+      preferred_channel: whatsapp
+      work_location: work_eindhoven
+      icloud_mail: true
+      icloud_calendar: true
+      icloud_username: "her@icloud.com"   # app-specific password in .env as ICLOUD_PASSWORD_MUM
+      share_mail_with_family: false
+  children: []
+  #  - {name: "Tom", born: 2018, notes: "football on Wednesdays, no nuts"}
+
+# The shared Google calendar "Family" (Google Calendar > Settings > the calendar > Calendar ID).
+family_calendar_id: "xxxxxxxxxxxxxxxx@group.calendar.google.com"
+
+locations:
+  home:            {label: "Engelen ('s-Hertogenbosch)", lat: 51.7206, lon: 5.2667}
+  work_eindhoven:  {label: "Eindhoven", lat: 51.4416, lon: 5.4697}
+  shopping:        {label: "'s-Hertogenbosch centre", lat: 51.6889, lon: 5.3036}
+
+quiet_hours: {start: "22:00", end: "07:00"}
+
+schedule:
+  morning_brief: "07:00"
+  weather_check_minutes: 30
+  week_ahead: "18:00"       # Sundays
+  meal_plan: "09:00"        # Saturdays
+
+ns_stations: ["'s-Hertogenbosch", "Eindhoven"]
+meteoalarm_regions: ["Noord-Brabant"]
+
+# Offers pages. Check each URL in a browser; if a page shows offers only after JavaScript runs,
+# use the shop's weekly folder page instead.
+shops:
+  - {name: "Albert Heijn",      kind: groceries, url: "https://www.ah.nl/bonus"}
+  - {name: "Plus",              kind: groceries, url: "https://www.plus.nl/aanbiedingen"}
+  - {name: "Lidl",              kind: groceries, url: "https://www.lidl.nl/c/aanbiedingen/a10008785"}
+  - {name: "Aldi",              kind: groceries, url: "https://www.aldi.nl/aanbiedingen.html"}
+  - {name: "Ekoplaza",          kind: groceries, url: "https://www.ekoplaza.nl/nl/aanbiedingen"}
+  - {name: "Etos",              kind: drugstore, url: "https://www.etos.nl/aanbiedingen/"}
+  - {name: "Holland & Barrett", kind: drugstore, url: "https://www.hollandandbarrett.nl/aanbiedingen/"}
+  - {name: "Bol",               kind: online,    url: "https://www.bol.com/nl/nl/m/deals/"}
+  - {name: "Coolblue",          kind: online,    url: "https://www.coolblue.nl/aanbiedingen"}
