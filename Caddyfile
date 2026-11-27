@@ -1,0 +1,4 @@
+# Replace with your own (sub)domain pointing at the server.
+alfred.example.com {
+    reverse_proxy alfred:8000
+}

@@ -1,0 +1,20 @@
+{
+  "warnings": [
+    {"alert": {"info": [
+      {"language": "nl-NL", "event": "Zware windstoten", "headline": "Code oranje",
+       "area": [{"areaDesc": "Noord-Brabant"}],
+       "parameter": [{"valueName": "awareness_level", "value": "3; orange; Severe"}],
+       "onset": "2026-11-28T12:00:00+01:00", "expires": "2026-11-28T20:00:00+01:00"},
+      {"language": "en-GB", "event": "Severe wind gusts", "headline": "Orange warning for wind",
+       "description": "Gusts of 90-100 km/h expected.",
+       "area": [{"areaDesc": "Noord-Brabant"}],
+       "parameter": [{"valueName": "awareness_level", "value": "3; orange; Severe"}],
+       "onset": "2026-11-28T12:00:00+01:00", "expires": "2026-11-28T20:00:00+01:00"}
+    ]}},
+    {"alert": {"info": [
+      {"language": "en-GB", "event": "Snow", "area": [{"areaDesc": "Groningen"}],
+       "parameter": [{"valueName": "awareness_level", "value": "2; yellow; Moderate"}],
+       "onset": "2026-11-28T06:00:00+01:00"}
+    ]}}
+  ]
+}

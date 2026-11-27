@@ -221,3 +221,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Alfred: personal data and secrets
+data/
+config/family.yaml
+config/google_client_secret.json
